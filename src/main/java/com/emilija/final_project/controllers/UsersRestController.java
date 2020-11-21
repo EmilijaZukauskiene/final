@@ -39,15 +39,20 @@ public class UsersRestController extends ApiRestController {
         return userRepository.save(user);
     }
 
-    @GetMapping("/users/{id}")
-    Optional<User> getUserById(@PathVariable Long id) {
-        return this.userRepository.findById(id);
+    @GetMapping("/usersid/{id}")
+    public User getUserById(@PathVariable Long id) {
+        return this.userRepository.findById(id).get();
     }
 
     @PutMapping("/users/{id}")
     User updateUserById(@PathVariable Long id, @RequestBody User user) {
         user.setId(id);
         return this.userRepository.save(user);
+    }
+
+    @GetMapping("/vartotojas/{id}")
+    public User vartotojas(@PathVariable Long id) {
+        return userRepository.findById(id).get();
     }
 }
 

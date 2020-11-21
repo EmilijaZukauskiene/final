@@ -1,4 +1,4 @@
-INSERT IGNORE INTO book VALUES
+INSERT IGNORE INTO book(book_id, author, title, price, isbn, description) VALUES
 (1, 'Jane Austen', 'Puikybė ir prietarai', '15 eur', '9786090114216', null),
 (2, 'Sue Townsend', 'Slaptas Adriano Moulo dienoraštis', '5 eur',
  '9789986023722', null),
@@ -11,9 +11,11 @@ INSERT IGNORE INTO book VALUES
 (8, 'Hilary Mantel','Vilko dvaras', '54 eur', '9786094442582', null);
 
 INSERT IGNORE INTO user(id, username, password, enabled) VALUES
-(1, 'Jonas', 'Jonas', true);
+(1, 'Jonas', 'Jonas', true),
+(2, 'Margarita', 'Margarita', true);
 
 INSERT IGNORE INTO role(id, name, user_id) VALUES
-(1, 'USER', 1);
+(1, 'USER', 1),
+(2, 'ADMIN', 2);
 
 

@@ -32,8 +32,8 @@ public class BookRestController {
        return bookService.findBookById(book_Id);
     }
 
-    @PutMapping("/update")
-    public void updateBook(@Valid @RequestBody Book bookToUpdate) {
+    @PostMapping("/update")
+    public void updateBook(@RequestBody Book bookToUpdate)  {
       bookService.updateBook(bookToUpdate);
     }
 
